@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
+import "@zondax/filecoin-solidity/contracts/v0.8/MinerAPI.sol";
+import "@zondax/filecoin-solidity/contracts/v0.8/types/MinerTypes.sol";
 
 contract SPEX {
 
@@ -25,8 +27,8 @@ contract SPEX {
 
     mapping (address => uint) name;
 
-    function confirmChangeOwnerToSpex(string calldata minerId) public {
-
+    function confirmChangeOwnerToSpex(string calldata minerId, string calldata sign) public {
+        
     }
 
     function listMiner(string calldata minerId, uint price) public {
@@ -55,5 +57,9 @@ contract SPEX {
     function getHistoryRecords() view public {
         
     }
-    
+
+    function getAvailableBalance(bytes memory target) public returns (int256) {
+        MinerTypes.GetAvailableBalanceReturn memory r = MinerAPI.getAvailableBalance(target);
+        return 123;
+    }
 }
