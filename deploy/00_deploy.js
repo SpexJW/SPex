@@ -67,7 +67,7 @@ module.exports = async ({ deployments }) => {
     console.log("deploying SPEX...")
     await deployLogError("SPEX", {
         from: deployer.address,
-        args: [0x0000001],
+        args: [],
         // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
         maxPriorityFeePerGas: priorityFee,
         log: true,
