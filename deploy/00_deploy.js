@@ -64,8 +64,8 @@ module.exports = async ({ deployments }) => {
     //     log: true,
     // })
 
-    console.log("deploying MinerAPI mock...")
-    await deployLogError("MinerAPI", {
+    console.log("deploying SPEX...")
+    await deployLogError("SPEX", {
         from: deployer.address,
         args: [0x0000001],
         // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
@@ -73,14 +73,14 @@ module.exports = async ({ deployments }) => {
         log: true,
     })
 
-    console.log("deploying MarketAPI mock...")
-    await deployLogError("MarketAPI", {
-        from: deployer.address,
-        args: [],
-        // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
-        maxPriorityFeePerGas: priorityFee,
-        log: true,
-    })
+    // console.log("deploying MarketAPI mock...")
+    // await deployLogError("MarketAPI", {
+    //     from: deployer.address,
+    //     args: [],
+    //     // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
+    //     maxPriorityFeePerGas: priorityFee,
+    //     log: true,
+    // })
 }
 
-module.exports.tags = ["SimpleCoin", "MinerAPI", "MarketAPI"]
+module.exports.tags = ["SPEX"]
